@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int T ;
+	cin >> T ;
+	while ( T -- )
+	{
+		string s ;
+ 	cin >> s;
+ 	int n = s.size() ;
+ 	int flg = 1 ;
+ 	map<char,int>mp ;
+ 	for ( int i =0 ;i < n -1;i ++ )
+ 	{
+ 		mp[s[i]] ++ ;
+		if ( mp[s[i]] > 1 ) {
+			flg ++ ;
+			break;
+		}	
+		int k =n -1;
+		int fllg =0,fl =0  ;
+		for ( int j= i +1 ;j<= (n-i)/2+i ;j++ )
+		{
+			//cout << " j == " << j <<endl;
+			//cout << s[j] << "--- " << s[k] <<endl;
+			if ( s[j] != s[k]   ) {
+				fllg = 1 ;
+				k = n- 1 ;
+				break;
+			}else k-- ;
+		}
+		//cout << fllg << "----" << flg <<endl;
+		if ( fllg == 0  )  {
+			flg = 0 ;
+			break;
+		}
+	}
+	//cout << "flg" <<flg <<endl;
+	if ( flg == 0 ) cout << "HE" <<endl;
+	else cout << "NaN" <<endl;
+	}
+}
