@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+ int main ()
+ {
+ 	int T ;
+ 	cin >> T ;
+ 	while ( T -- )
+ 	{
+	 
+ 	int n , k;
+ 	cin >> n >> k ;
+ 	int  f1,f2,f3 ;
+ 	int ans =0;
+ 	for ( int i =n/2 ;i <= n ;i ++ )
+ 	{
+ 		f1 = n ;
+		f2 = i ;
+		int cnt = 2  ;
+		while ( cnt < k  )
+		{
+				f3 = f1 - f2 ;
+				f1 = f2 ;
+				f2 = f3 ;
+				if( f1 < f2 ) {
+					break;
+				}
+				cnt ++ ;
+		}	
+		if ( cnt == k ) ans ++ ;
+	}
+	cout << ans <<endl;
+ 	
+ }
+ 	
+ 	
+ 	
+ 	
+ }
